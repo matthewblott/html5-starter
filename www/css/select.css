@@ -1,0 +1,74 @@
+
+select {
+  background-color: inherit;
+  border: 1px solid lightgrey;
+}
+
+select {
+    
+
+
+  /* clip-path: polygon(100% 0%, 0 0%, 50% 100%); */
+}
+
+
+  option {
+    color:red;
+    background-color: lightgrey;
+  }
+
+/* div { */
+  /* display: grid; */
+  /* align-items: center; */
+  /*  */
+  /* select, */
+  /* &::after { */
+  /*   grid-area: select; */
+  /* } */
+  /**/
+  /* min-width: 15ch; */
+  /* max-width: 30ch; */
+
+  /* &::after { */
+
+    /* content: ""; */
+    /**/
+    /* justify-self: end; */
+
+    /* Arrow icon width */
+    /* width: 0.8em; */
+    /* Arrow icon height */
+    /* height: 0.5em; */
+    /* Arrow icon color */
+    /* background-color: lightgrey; */
+    
+    /* Arrow icon shape */
+    /* clip-path: polygon(100% 0%, 0 0%, 50% 100%); */
+  /* } */
+/* } */
+
+
+/* div { */
+/*   display: grid; */
+/*   align-items: center; */
+/*    */
+/*   select, */
+/*   &::after { */
+/*     grid-area: select; */
+/*   } */
+/**/
+/*   min-width: 15ch; */
+/*   max-width: 30ch; */
+/**/
+/*   &::after { */
+/**/
+/*     content: ""; */
+/**/
+/*     justify-self: end; */
+/**/
+/*     width: 0.8em; */
+/*     height: 0.5em; */
+/*     background-color: lightgrey; */
+/*     clip-path: polygon(100% 0%, 0 0%, 50% 100%); */
+/*   } */
+/* } */

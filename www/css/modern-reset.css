@@ -1,0 +1,218 @@
+/* Create a root stacking context, only really required if using a JS framework */
+#root,
+#__next {
+  isolation: isolate;
+}
+
+:root {
+  --control-border-style: solid;
+  --control-border-color: lightgrey;
+  --control-border-width: 1px;
+  --control-color-disabled: lightgrey;
+}
+
+/* Improved line height */
+/* Font smoothing for macOS */
+:root {
+  line-height: 1.5;
+  line-height: calc(1em + 0.5rem);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Clear margins */
+h1, h2, h3, h4, h5, h6, figure, p, ol, ul {
+  margin: 0;
+}
+
+/* Reset heading typography */
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+/* Remove default list styles */
+ol, ul {
+  list-style: none;
+  padding-inline: 0;
+}
+
+/* Responsive images and improved media defaults */
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+  max-inline-size: 100%;
+}
+
+/* Safari fix to make abbreviations work */
+abbr[title] {
+  text-decoration: underline;
+  text-decoration: underline dotted;
+  text-decoration-style: dotted;
+}
+
+/* Avoid text overflows */
+h1, h2, h3, h4, h5, h6, p {
+  overflow-wrap: break-word;
+}
+
+/* Sensible breakpoints */
+hr {
+  font: inherit;
+  margin: 0;
+}
+
+/* Preferred opinionated defaults */
+
+/* Makes inputs consistent */
+input:not([type="checkbox"]):not([type="radio"]) {
+  border-style: solid;
+  border-color: inherit;
+  border-width: var(--control-border-width);
+}
+
+/* Remove the differing browser styles for input focus  */
+input:focus {
+  outline: none;
+}
+
+/* Button */
+input[type="submit"] {
+  background-color: inherit;   
+}
+
+button {
+  background-color: inherit;   
+  border-style: solid; 
+  border-width: var(--control-border-width);
+  border-color: inherit;
+}
+
+
+/* Hide the spin button for the number input */
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox hide the spin button */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+/* Remove the fieldset */
+fieldset {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+/* Remove the default radio */
+
+input[type="radio"] {
+  -webkit-appearance: none;
+  appearance: none;
+  /* Width of the outer circle */
+  width: 1.15em;
+  /* Height of the outer circle */
+  height: 1.15em;
+  /* Radius of the outer circle */
+  border-radius: 50%;
+  /* Style of the outer circle */ 
+  border-style: solid;
+  border-color: inherit;
+  border-width: var(--control-border-width);
+  display: grid;
+  place-content: center;
+}
+
+input[type="radio"]::before {
+  content: "";
+  /* Width of the inner circle */
+  width: 0.65em;
+  /* Height of the inner circle */
+  height: 0.65em;
+  /* Radius of the inner circle */
+  border-radius: 50%;
+  transform: scale(0);
+  background-color: CanvasText;
+}
+
+input[type="radio"]:checked::before {
+  transform: scale(1);
+}
+
+input[type="radio"]:disabled::before{
+  background-color: var(--control-color-disabled);
+  cursor: not-allowed;
+}
+
+input[type="radio"]:disabled {
+  color: var(--control-color-disabled);
+  cursor: not-allowed;
+}
+
+/* Remove the default checkbox  */
+
+input[type="checkbox"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 1.15em;
+  height: 1.15em;
+  border-style: solid;
+  border-color: inherit;
+  border-width: var(--control-border-width);
+  display: grid;
+  place-content: center;
+  transform: translateY(-0.075em);
+}
+
+input[type="checkbox"]::before {
+  content: "";
+  width: 0.65em;
+  height: 0.65em;
+  transform: scale(0);
+  background-color: CanvasText;
+  transform-origin: bottom left;
+  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+}
+
+input[type="checkbox"]:disabled::before{
+  background-color: var(--control-color-disabled);
+  cursor: not-allowed;
+}
+
+input[type="checkbox"]:checked::before {
+  transform: scale(1);
+}
+
+input[type="checkbox"]:disabled {
+  color: var(--control-color-disabled);
+  cursor: not-allowed;
+}
+
+/* Select */
+
+select {
+  appearance: none;
+  /* display: grid; */
+  /* grid-template-areas: "select"; */
+  /* align-items: center; */
+  /* position: relative; */
+  min-width: 15ch;
+  max-width: 30ch;
+  border: var(--control-border-width) var(--control-border-style) var(--control-border-color);
+  background-image: linear-gradient(to top, #f9f9f9, white 33%);
+
+  &:not(.select--multiple)::after {
+    content: "";
+    justify-self: end;
+    width: 0.8em;
+    height: 0.5em;
+    background-color: var(--control-border-color);
+    clip-path: polygon(100% 0%, 0 0%, 50% 100%);
+  }
+
+}
